@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://swisspsikoloji.com/sitemap.xml
