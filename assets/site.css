@@ -5,3 +5,5 @@ img{max-width:100%;height:auto}main{min-width:0}p,a{overflow-wrap:break-word}
 @media(min-width:701px){body>footer{margin-left:280px}}@media(min-width:701px) and (max-width:1000px){body>footer{margin-left:235px}}
 @media(max-width:700px){.navlinks.is-open{display:flex!important}.navlinks a{min-height:44px}.lang-btn{min-height:36px}.sport-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+
+@media(max-width:480px){body>nav{flex-wrap:wrap;row-gap:8px}body>nav>.navcta{order:4;flex:1 0 100%;margin:0!important;text-align:center}html{scroll-padding-top:150px}}
