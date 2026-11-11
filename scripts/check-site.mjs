@@ -21,8 +21,9 @@ for(const page of pages){
  for(const m of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g))JSON.parse(m[1]);
  for(const m of html.matchAll(/(?:href|src)="([^"]+)"/g)){
   const value=m[1];if(/^(https?:|tel:|mailto:|data:)/.test(value))continue;
-  const [raw,fragment]=value.split('#');
-  const file=raw.replace(/^\//,'')||(value.startsWith('#')?page:'index.html');
+  const url=new URL(value,'https://swisspsikoloji.com/'+(page==='index.html'?'':page));
+  const fragment=url.hash.slice(1);
+  const file=decodeURIComponent(url.pathname).replace(/^\//,'')||'index.html';
   const target=path.join(root,file);
   assert(fs.existsSync(target),page+': missing '+value);
   if(fragment)assert(fs.readFileSync(target,'utf8').includes('id="'+fragment+'"'),page+': missing fragment '+value);
@@ -36,5 +37,11 @@ const sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
 assert(!sitemap.includes('/404.html'),'404 must not be in sitemap');
 for(const page of pages.filter(p=>p!=='404.html'))
  assert(sitemap.includes('https://swisspsikoloji.com/'+(page==='index.html'?'':page)),page+': missing from sitemap');
+const home=fs.readFileSync(path.join(root,'index.html'),'utf8');
+assert.match(home,/id="randevu"/,'appointment anchor must be present');
+assert.match(home,/name="meetingFormat"/,'session format selection must be present');
+assert.match(home,/action="https:\/\/formsubmit.co\/ihorasan@swisspsikoloji.com"/,'appointment request delivery must be configured');
+assert.match(home,/Spor psikolojisi/,'sport psychology visible on home page');
+assert.match(fs.readFileSync(path.join(root,'spor-psikolojisi.html'),'utf8'),/\?alan=spor#randevu/,'sport page must link to its booking form');
 assert.equal(fs.readFileSync(path.join(root,'CNAME'),'utf8').trim(),'swisspsikoloji.com');
 console.log(count+' pages passed: metadata, schema, internal links, assets, sitemap and JavaScript.');
