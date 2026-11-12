@@ -1,1 +1,15 @@
 .sport-hero{padding:70px 0 48px}.sport-hero h1{font-size:clamp(40px,7vw,76px);line-height:1.06;letter-spacing:-.05em;max-width:900px;margin:24px 0}.sport-hero .lead{max-width:760px}.sport-section{padding:48px 0}.sport-section h2{font-size:clamp(28px,4vw,42px);letter-spacing:-.04em;margin:0 0 22px}.sport-section p,.sport-section li{line-height:1.8;color:var(--muted)}.sport-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.sport-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px}.sport-card h3{margin-top:0}.sport-faq details{padding:20px 0;border-bottom:1px solid var(--line)}.sport-faq summary{font-size:18px;font-weight:600;cursor:pointer}.sport-footer{padding:30px 0;border-top:1px solid var(--line)}@media(max-width:700px){.sport-grid{grid-template-columns:1fr}.sport-hero{padding-top:38px}}
+/* Editorial sport psychology layout, aligned with Swiss Psikoloji's shared design. */
+.sport-hero{background:linear-gradient(120deg,#e8f0ea 0%,#f8faf7 100%);border-bottom:1px solid #e1e9e2;padding:clamp(48px,7vw,86px) 0}
+.sport-hero h1{color:#24332c;font-weight:650;line-height:1.06;text-wrap:balance}
+.sport-hero .lead{color:#4e5b53;font-size:clamp(17px,1.8vw,21px)}
+.sport-section{padding:clamp(48px,6vw,80px) 0}
+.sport-section h2{font-weight:630;color:#26332d;line-height:1.14;text-wrap:balance}
+.sport-card{border:1px solid #e2e9e4;border-radius:22px;padding:clamp(22px,2.3vw,30px);box-shadow:0 9px 29px rgba(34,50,39,.05);transition:transform .24s,box-shadow .24s,border-color .24s}
+.sport-card:hover{transform:translateY(-3px);border-color:#c9d6cc;box-shadow:0 17px 40px rgba(35,52,40,.10)}
+.sport-card h3{line-height:1.26;letter-spacing:-.025em}
+.sport-faq details{border-bottom:1px solid #dce5de;padding:22px 4px}
+.sport-faq summary{color:#27372e;list-style-position:outside}
+.sport-faq summary:hover{color:#a72c3c}
+.sport-faq details[open] summary{color:#a72c3c}
+@media(max-width:700px){.sport-card:hover{transform:none}.sport-hero{padding-top:43px}.sport-section{padding:45px 0}}
