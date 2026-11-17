@@ -47,3 +47,27 @@ input:focus,textarea:focus,select:focus{border-color:#9d3b4b;box-shadow:0 0 0 3p
 footer{background:#f7f9f7;border-color:#e2e8e3}
 a:focus-visible,button:focus-visible{outline:3px solid #b82c3f;outline-offset:3px}
 @media(max-width:700px){nav{background:rgba(255,255,255,.97);border-bottom:1px solid #e5eae6}.navlinks{background:#fff}.route-card:hover,.service:hover{transform:none}.hero{background:linear-gradient(145deg,#e8f0e9,#f7f9f7)}}
+
+/* Clear, consistently sized decorative icons and readable editorial pages. */
+.service .icon{width:48px;height:48px;flex-shrink:0}
+.service .icon svg{display:block;width:26px;height:26px;stroke-width:1.7}
+.arrow{display:inline-block;line-height:1;flex-shrink:0}
+.contact-icon{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.menu-toggle span{display:block;min-width:22px;text-align:center;line-height:1}
+.online-intro{padding:52px 0;background:#e9f0eb}
+.online-intro h2{font-size:clamp(28px,3vw,40px);letter-spacing:-.035em}
+.online-intro p{max-width:760px;line-height:1.8}
+.editorial-hero{padding:64px 0;background:linear-gradient(130deg,#e7efe9,#f8f9f7)}
+.editorial-hero h1{max-width:850px;font-size:clamp(34px,4.6vw,62px);line-height:1.1;letter-spacing:-.045em;text-wrap:balance}
+.editorial-hero .lead{max-width:760px;margin-bottom:28px}
+.editorial-body{max-width:1050px;padding-bottom:48px}
+.editorial-body section{padding:38px 0;border-bottom:1px solid var(--line)}
+.editorial-body h2{font-size:clamp(25px,3vw,34px);letter-spacing:-.025em;line-height:1.25}
+.editorial-body h3{font-size:20px;line-height:1.4}
+.editorial-body p,.editorial-body li{font-size:16px;line-height:1.85;color:#46534c}
+.editorial-body li+li{margin-top:12px}
+.editorial-body a:not(.btn){text-decoration:underline;text-underline-offset:4px;color:#9e2a3b}
+.editorial-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.editorial-cards article{padding:22px;border:1px solid var(--line);border-radius:20px;background:white}
+@media(max-width:1000px){.editorial-cards{grid-template-columns:1fr}}
+@media(max-width:700px){.editorial-hero{padding:40px 0}.editorial-body section{padding:28px 0}}
