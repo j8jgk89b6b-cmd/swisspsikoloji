@@ -35,7 +35,7 @@ for(const file of fs.readdirSync(path.join(root,'assets')).filter(p=>p.endsWith(
  new vm.Script(fs.readFileSync(path.join(root,'assets',file),'utf8'),{filename:file});
 const sitemap=fs.readFileSync(path.join(root,'sitemap.xml'),'utf8');
 assert(!sitemap.includes('/404.html'),'404 must not be in sitemap');
-for(const page of pages.filter(p=>p!=='404.html'))
+for(const page of pages.filter(p=>p!=='404.html'&&!fs.readFileSync(path.join(root,p),'utf8').includes('http-equiv="refresh"')))
  assert(sitemap.includes('https://swisspsikoloji.com/'+(page==='index.html'?'':page)),page+': missing from sitemap');
 const home=fs.readFileSync(path.join(root,'index.html'),'utf8');
 assert.match(home,/id="randevu"/,'appointment anchor must be present');
